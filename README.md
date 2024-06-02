@@ -1,6 +1,6 @@
 ## Overview
 
-This project involves creating a system that handles orders for a product (specifically burgers) consisting of multiple ingredients. The system needs to manage stock levels for each ingredient, update stock when orders are placed, and send notifications when stock levels fall below a specified threshold. The implementation is built using Laravel v11 and a MySQL database, considering optimizations, performance, and clean code practices.
+This project involves creating a system that handles orders for a products consisting of multiple ingredients. The system needs to manage stock levels for each ingredient, update stock when orders are placed, and send notifications when stock levels fall below a specified threshold. The implementation is built using Laravel v11 and a MySQL database, considering optimizations, performance, and clean code practices.
 
 ## Implementation Summary
 
@@ -14,7 +14,7 @@ We implemented the system with three main models: Product, Ingredient, and Order
 - `docker-compose up` to build and run the project.
 - `docker-compose exec app bash` to enter the main container
 - Run `php artisan migrate`
-- Run `php artisan db:seed`
+- Run `php artisan db:seed` (you can run it more and more whenever you want to fill-up your stocks)
 - Run `php artisan db:seed --class=ConfigSeeder`
 - Run `php artisan key:generate`
 - Run `php artisan queue:work`
@@ -113,4 +113,3 @@ We implemented the system with three main models: Product, Ingredient, and Order
 - There are more work to do to make the task more logical, but I didn't consider it to avoid over-engineering to doing unnecessary tasks that is more required (for example: protecting the endpoint with authentication).
 - Using repositories was considered in the task, but it's too simple to do so. It will be just an extra layer that duplicates the model's functions.
 - We have a queue jobs that needs the queue command to be running. As we are using docker, it's recommended to create a separated container that only runs that queue command. But was skipped in the task for avoiding unnecessary\unrelated implementations.
-- 
